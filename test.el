@@ -9,7 +9,7 @@
          :body
          (lambda ()
            ;; Auto generated tests that should find a directory.
-           (let* ((test-dir (concat (file-name-directory (buffer-file-name)) "tests/"))
+           (let* ((test-dir (concat (file-name-directory (buffer-file-name)) "fs/"))
                   (cur-dir test-dir)
                   (passed '()))
              (dolist (dir-depth (number-sequence 1 4))
@@ -50,7 +50,7 @@
                            (nil . (".." . "a"))
                            (nil . ("af" . "a/ab"))))
                   (c-dir (file-name-directory (buffer-file-name)))
-                  (test-dir (concat c-dir "tests/")))
+                  (test-dir (concat c-dir "fs/")))
              (dolist (test tests)
                (let* ((expected-root-dir (pop test))
                       (expected (when expected-root-dir
