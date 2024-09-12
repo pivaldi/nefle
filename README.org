@@ -6,7 +6,7 @@
 * Feature
 
 - ~(nefle-get-up-dir-containing-file "plop.txt")~ returns the first directory
-  containing the file =plop.txt= traversing up the directory tree from the
+  containing the file =plop.txt= traversing up the directory +tree+ from the
   default directory to the root directory.
 - ~(nefle-get-up-dir-containing-file "plop.txt" "/from/this/dir/")~ the same behavior
   of previous but starting from the directory =/from/this/dir/=.
@@ -34,7 +34,7 @@ upward Makefile.
 
 * TODO Todo
 
-- Write the same feature traversing up all the directory.
+- Write the same feature traversing up all the directories' tree.
 - Write the same feature for the "nearest" downward file.
 - Sugar function to return a file instead of a directory.
 - Function that admit a numeric parameter "max up level" instead of a directory.
