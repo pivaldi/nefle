@@ -1,0 +1,40 @@
+#+title: NeFle
+
+[[https://github.com/pivaldi/nefle][NeFle]] is an Emacs package to search the
+"nearest" file from a given file-system location.
+
+* Feature
+
+- ~(nefle-get-up-dir-containing-file "plop.txt")~ returns the first directory
+  containing the file =plop.txt= traversing up the directory tree from the
+  default directory to the root directory.
+- ~(nefle-get-up-dir-containing-file "plop.txt" "/from/this/dir/")~ the same behavior
+  of previous but starting from the directory =/from/this/dir/=.
+- ~(nefle-get-up-dir-containing-file "plop.txt" "/from/this/dir/" "/form")~ the same
+  behavior of previous but stop searching above =/from/=.
+
+If called interactively, ask for the file-name to search and, if found, open the
+first directory containing the file.
+
+* Example of Usage
+
+** Compiling with upward Makefile
+
+Key binding for compiling from any sub-directory relative to an
+upward Makefile.
+
+;; upward Makefile
+#+begin_src lisp
+(global-set-key
+ [f9] (lambda ()
+        (interactive)
+        (compile
+         (format "make -f %sMakefile"
+                 (nefle-get-up-dir-containing-file "Makefile")))))
+#+end_src
+
+* TODO
+
+- Write the same feature for the "nearest" downward file.
+- Sugar function to return a file instead of a directory.
+- Function that admit a numeric parameter "max up level" instead of a directory.
